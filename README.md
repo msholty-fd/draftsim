@@ -2,7 +2,11 @@
 
 ## Build & development
 
-Run `npm run dev`
+Run 
+```
+npm install
+npm run dev
+```
 
 ## TODO:
-FIX CORS ISSUE BEFORE GOING LIVE
+
