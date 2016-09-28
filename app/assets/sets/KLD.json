@@ -44,6 +44,7 @@
          "name":"Acrobatic Maneuver",
          "number":"1",
          "rarity":"Common",
+         "rating": "1.7",
          "text":"Exile target creature you control, then return that card to the battlefield under its owner's control.\nDraw a card.",
          "type":"Instant",
          "types":[
@@ -69,6 +70,7 @@
          "number":"2",
          "power":"2",
          "rarity":"Uncommon",
+         "rating": "3.7",
          "subtypes":[
             "Dwarf",
             "Soldier"
@@ -98,6 +100,7 @@
          "number":"3",
          "power":"3",
          "rarity":"Rare",
+         "rating": "4.5",
          "subtypes":[
             "Bird"
          ],
@@ -126,6 +129,7 @@
          "number":"4",
          "power":"2",
          "rarity":"Mythic Rare",
+         "rating": "4.7",
          "subtypes":[
             "Angel"
          ],
@@ -154,6 +158,7 @@
          "name":"Authority of the Consuls",
          "number":"5",
          "rarity":"Rare",
+         "rating": "1.0",
          "text":"Creatures your opponents control enter the battlefield tapped.\nWhenever a creature enters the battlefield under an opponent's control, you gain 1 life.",
          "type":"Enchantment",
          "types":[
@@ -179,6 +184,7 @@
          "number":"6",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.6",
          "subtypes":[
             "Dwarf",
             "Artificer"
@@ -208,6 +214,7 @@
          "name":"Built to Last",
          "number":"7",
          "rarity":"Common",
+         "rating": "1.9",
          "text":"Target creature gets +2/+2 until end of turn. If it's an artifact creature, it gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
          "type":"Instant",
          "types":[
@@ -232,6 +239,7 @@
          "name":"Captured by the Consulate",
          "number":"8",
          "rarity":"Rare",
+         "rating": "3.6",
          "subtypes":[
             "Aura"
          ],
@@ -259,6 +267,7 @@
          "number":"9",
          "power":"4",
          "rarity":"Mythic Rare",
+         "rating": "4.4",
          "subtypes":[
             "Construct"
          ],
@@ -287,6 +296,7 @@
          "name":"Consulate Surveillance",
          "number":"10",
          "rarity":"Uncommon",
+         "rating": "1.4",
          "text":"When Consulate Surveillance enters the battlefield, you get {E}{E}{E}{E} (four energy counters).\nPay {E}{E}: Prevent all damage that would be dealt to you this turn by a source of your choice.",
          "type":"Enchantment",
          "types":[
@@ -311,6 +321,7 @@
          "number":"11",
          "power":"3",
          "rarity":"Uncommon",
+         "rating": "2.7",
          "subtypes":[
             "Dwarf",
             "Soldier"
@@ -340,6 +351,7 @@
          "number":"12",
          "power":"1",
          "rarity":"Common",
+         "rating": "2.1",
          "subtypes":[
             "Bird"
          ],
@@ -369,6 +381,7 @@
          "number":"13",
          "power":"1",
          "rarity":"Uncommon",
+         "rating": "3.6",
          "subtypes":[
             "Dwarf",
             "Soldier"
@@ -398,6 +411,7 @@
          "name":"Fragmentize",
          "number":"14",
          "rarity":"Common",
+         "rating": "2.1",
          "text":"Destroy target artifact or enchantment with converted mana cost 4 or less.",
          "type":"Sorcery",
          "types":[
@@ -422,6 +436,7 @@
          "name":"Fumigate",
          "number":"15",
          "rarity":"Rare",
+         "rating": "3.8",
          "text":"Destroy all creatures. You gain 1 life for each creature destroyed this way.",
          "type":"Sorcery",
          "types":[
@@ -447,6 +462,7 @@
          "number":"16",
          "power":"2",
          "rarity":"Uncommon",
+         "rating": "3.0",
          "subtypes":[
             "Dwarf",
             "Pilot"
@@ -477,6 +493,7 @@
          "number":"17",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.9",
          "subtypes":[
             "Dwarf",
             "Artificer"
@@ -507,6 +524,7 @@
          "number":"18",
          "power":"3",
          "rarity":"Common",
+         "rating": "2.3",
          "subtypes":[
             "Human"
          ],
@@ -535,6 +553,7 @@
          "name":"Impeccable Timing",
          "number":"19",
          "rarity":"Common",
+         "rating": "2.9",
          "text":"Impeccable Timing deals 3 damage to target attacking or blocking creature.",
          "type":"Instant",
          "types":[
@@ -559,6 +578,7 @@
          "name":"Inspired Charge",
          "number":"20",
          "rarity":"Common",
+         "rating": "1.4",
          "text":"Creatures you control get +2/+1 until end of turn.",
          "type":"Instant",
          "types":[
@@ -584,6 +604,7 @@
          "number":"21",
          "power":"3",
          "rarity":"Rare",
+         "rating": "3.8",
          "subtypes":[
             "Dwarf",
             "Artificer"
@@ -614,6 +635,7 @@
          "number":"22",
          "power":"1",
          "rarity":"Common",
+         "rating": "2.1",
          "subtypes":[
             "Dwarf",
             "Soldier"
@@ -643,6 +665,7 @@
          "name":"Pressure Point",
          "number":"23",
          "rarity":"Common",
+         "rating": "1.6",
          "text":"Tap target creature.\nDraw a card.",
          "type":"Instant",
          "types":[
@@ -668,6 +691,7 @@
          "number":"24",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.7",
          "subtypes":[
             "Human",
             "Artificer"
@@ -697,6 +721,7 @@
          "name":"Refurbish",
          "number":"25",
          "rarity":"Uncommon",
+         "rating": "0.9",
          "text":"Return target artifact card from your graveyard to the battlefield.",
          "type":"Sorcery",
          "types":[
@@ -721,6 +746,7 @@
          "name":"Revoke Privileges",
          "number":"26",
          "rarity":"Common",
+         "rating": "3.4",
          "subtypes":[
             "Aura"
          ],
@@ -748,6 +774,7 @@
          "name":"Servo Exhibition",
          "number":"27",
          "rarity":"Uncommon",
+         "rating": "2.4",
          "text":"Create two 1/1 colorless Servo artifact creature tokens.",
          "type":"Sorcery",
          "types":[
@@ -773,6 +800,7 @@
          "number":"28",
          "power":"3",
          "rarity":"Common",
+         "rating": "2.5",
          "subtypes":[
             "Bird"
          ],
@@ -801,6 +829,7 @@
          "name":"Skywhaler's Shot",
          "number":"29",
          "rarity":"Uncommon",
+         "rating": "3.3",
          "text":"Destroy target creature with power 3 or greater. Scry 1.",
          "type":"Instant",
          "types":[
@@ -826,6 +855,7 @@
          "number":"30",
          "power":"0",
          "rarity":"Common",
+         "rating": "1.2",
          "subtypes":[
             "Camel"
          ],
@@ -854,6 +884,7 @@
          "number":"31",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.9",
          "subtypes":[
             "Goat"
          ],
@@ -883,6 +914,7 @@
          "number":"32",
          "power":"1",
          "rarity":"Rare",
+         "rating": "2.5",
          "subtypes":[
             "Dwarf",
             "Artificer"
@@ -913,6 +945,7 @@
          "number":"33",
          "power":"3",
          "rarity":"Uncommon",
+         "rating": "2.7",
          "subtypes":[
             "Hyena"
          ],
@@ -942,6 +975,7 @@
          "number":"34",
          "power":"2",
          "rarity":"Uncommon",
+         "rating": "3.0",
          "subtypes":[
             "Dwarf",
             "Artificer"
@@ -971,6 +1005,7 @@
          "number":"35",
          "power":"4",
          "rarity":"Uncommon",
+         "rating": "3.1",
          "subtypes":[
             "Angel"
          ],
@@ -998,6 +1033,7 @@
          "name":"Aether Meltdown",
          "number":"36",
          "rarity":"Uncommon",
+         "rating": "2.8",
          "subtypes":[
             "Aura"
          ],
@@ -1025,6 +1061,7 @@
          "number":"37",
          "power":"1",
          "rarity":"Common",
+         "rating": "2.7",
          "subtypes":[
             "Vedalken",
             "Rogue"
@@ -1054,6 +1091,7 @@
          "name":"Aether Tradewinds",
          "number":"38",
          "rarity":"Common",
+         "rating": "1.8",
          "text":"Return target permanent you control and target permanent you don't control to their owners' hands.",
          "type":"Instant",
          "types":[
@@ -1078,6 +1116,7 @@
          "number":"39",
          "power":"6",
          "rarity":"Rare",
+         "rating": "4.2",
          "subtypes":[
             "Leviathan"
          ],
@@ -1106,6 +1145,7 @@
          "name":"Ceremonious Rejection",
          "number":"40",
          "rarity":"Uncommon",
+         "rating": "1.3",
          "text":"Counter target colorless spell.",
          "type":"Instant",
          "types":[
@@ -1130,6 +1170,7 @@
          "name":"Confiscation Coup",
          "number":"41",
          "rarity":"Rare",
+         "rating": "4.8",
          "text":"Choose target artifact or creature. You get {E}{E}{E}{E} (four energy counters), then you may pay an amount of {E} equal to that permanent's converted mana cost. If you do, gain control of it.",
          "type":"Sorcery",
          "types":[
@@ -1155,6 +1196,7 @@
          "number":"42",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.0",
          "subtypes":[
             "Vedalken"
          ],
@@ -1182,6 +1224,7 @@
          "name":"Disappearing Act",
          "number":"43",
          "rarity":"Uncommon",
+         "rating": "1.8",
          "text":"As an additional cost to cast Disappearing Act, return a permanent you control to its owner's hand.\nCounter target spell.",
          "type":"Instant",
          "types":[
@@ -1206,6 +1249,7 @@
          "name":"Dramatic Reversal",
          "number":"44",
          "rarity":"Common",
+         "rating": "0.8",
          "text":"Untap all nonland permanents you control.",
          "type":"Instant",
          "types":[
@@ -1229,6 +1273,7 @@
          "name":"Era of Innovation",
          "number":"45",
          "rarity":"Uncommon",
+         "rating": "1.8",
          "text":"Whenever an artifact or Artificer enters the battlefield under your control, you may pay {1}. If you do, you get {E}{E} (two energy counters).\nPay {E}{E}{E}{E}{E}{E}, Sacrifice Era of Innovation: Draw three cards.",
          "type":"Enchantment",
          "types":[
@@ -1254,6 +1299,7 @@
          "number":"46",
          "power":"0",
          "rarity":"Uncommon",
+         "rating": "2.7",
          "subtypes":[
             "Human",
             "Artificer"
@@ -1283,6 +1329,7 @@
          "name":"Failed Inspection",
          "number":"47",
          "rarity":"Common",
+         "rating": "1.7",
          "text":"Counter target spell. Draw a card, then discard a card.",
          "type":"Instant",
          "types":[
@@ -1308,6 +1355,7 @@
          "number":"48",
          "power":"5",
          "rarity":"Common",
+         "rating": "2.3",
          "subtypes":[
             "Serpent"
          ],
@@ -1336,6 +1384,7 @@
          "name":"Glimmer of Genius",
          "number":"49",
          "rarity":"Uncommon",
+         "rating": "2.8",
          "text":"Scry 2, then draw two cards. You get {E}{E} (two energy counters).",
          "type":"Instant",
          "types":[
@@ -1360,6 +1409,7 @@
          "number":"50",
          "power":"1",
          "rarity":"Uncommon",
+         "rating": "2.9",
          "subtypes":[
             "Bird"
          ],
@@ -1388,6 +1438,7 @@
          "number":"51",
          "power":"4",
          "rarity":"Common",
+         "rating": "2.1",
          "subtypes":[
             "Crab"
          ],
@@ -1416,6 +1467,7 @@
          "name":"Insidious Will",
          "number":"52",
          "rarity":"Rare",
+         "rating": "2.8",
          "text":"Choose one —\n• Counter target spell.\n• You may choose new targets for target spell.\n• Copy target instant or sorcery spell. You may choose new targets for the copy.",
          "type":"Instant",
          "types":[
@@ -1441,6 +1493,7 @@
          "number":"53",
          "power":"2",
          "rarity":"Uncommon",
+         "rating": "2.3",
          "subtypes":[
             "Vedalken",
             "Soldier"
@@ -1471,6 +1524,7 @@
          "number":"54",
          "power":"4",
          "rarity":"Uncommon",
+         "rating": "3.3",
          "subtypes":[
             "Whale"
          ],
@@ -1499,6 +1553,7 @@
          "name":"Malfunction",
          "number":"55",
          "rarity":"Common",
+         "rating": "2.9",
          "subtypes":[
             "Aura"
          ],
@@ -1525,6 +1580,7 @@
          "name":"Metallurgic Summonings",
          "number":"56",
          "rarity":"Mythic Rare",
+         "rating": "1.5",
          "text":"Whenever you cast an instant or sorcery spell, create an X/X colorless Construct artifact creature token, where X is that spell's converted mana cost.\n{3}{U}{U}, Exile Metallurgic Summonings: Return all instant and sorcery cards from your graveyard to your hand. Activate this ability only if you control six or more artifacts.",
          "type":"Enchantment",
          "types":[
@@ -1550,6 +1606,7 @@
          "number":"57",
          "power":"1",
          "rarity":"Uncommon",
+         "rating": "1.5",
          "subtypes":[
             "Vedalken",
             "Advisor"
@@ -1580,6 +1637,7 @@
          "number":"58",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.7",
          "subtypes":[
             "Vedalken",
             "Artificer"
@@ -1610,6 +1668,7 @@
          "number":"59",
          "power":"1",
          "rarity":"Rare",
+         "rating": "3.4",
          "subtypes":[
             "Vedalken",
             "Artificer"
@@ -1642,6 +1701,7 @@
          "name":"Paradoxical Outcome",
          "number":"60",
          "rarity":"Rare",
+         "rating": "1.6",
          "text":"Return any number of target nonland, nontoken permanents you control to their owners' hands. Draw a card for each card returned to your hand this way.",
          "type":"Instant",
          "types":[
@@ -1666,6 +1726,7 @@
          "name":"Revolutionary Rebuff",
          "number":"61",
          "rarity":"Common",
+         "rating": "1.7",
          "text":"Counter target nonartifact spell unless its controller pays {2}.",
          "type":"Instant",
          "types":[
@@ -1690,6 +1751,7 @@
          "name":"Saheeli's Artistry",
          "number":"62",
          "rarity":"Rare",
+         "rating": "3.9",
          "text":"Choose one or both —\n• Create a token that's a copy of target artifact.\n• Create a token that's a copy of target creature, except it's an artifact in addition to its other types.",
          "type":"Sorcery",
          "types":[
@@ -1713,6 +1775,7 @@
          "name":"Select for Inspection",
          "number":"63",
          "rarity":"Common",
+         "rating": "2.2",
          "text":"Return target tapped creature to its owner's hand. Scry 1. (Look at the top card of your library. You may put that card on the bottom of your library.)",
          "type":"Instant",
          "types":[
@@ -1737,6 +1800,7 @@
          "name":"Shrewd Negotiation",
          "number":"64",
          "rarity":"Uncommon",
+         "rating": "1.9",
          "text":"Exchange control of target artifact you control and target artifact or creature you don't control.",
          "type":"Sorcery",
          "types":[
@@ -1761,6 +1825,7 @@
          "name":"Tezzeret's Ambition",
          "number":"65",
          "rarity":"Common",
+         "rating": "2.0",
          "text":"Draw three cards. If you control no artifacts, discard a card.",
          "type":"Sorcery",
          "types":[
@@ -1786,6 +1851,7 @@
          "number":"66",
          "power":"0",
          "rarity":"Common",
+         "rating": "2.1",
          "subtypes":[
             "Turtle"
          ],
@@ -1814,6 +1880,7 @@
          "number":"67",
          "power":"5",
          "rarity":"Mythic Rare",
+         "rating": "4.7",
          "subtypes":[
             "Construct"
          ],
@@ -1844,6 +1911,7 @@
          "number":"68",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.6",
          "subtypes":[
             "Vedalken",
             "Soldier"
@@ -1874,6 +1942,7 @@
          "number":"69",
          "power":"3",
          "rarity":"Common",
+         "rating": "2.3",
          "subtypes":[
             "Human",
             "Artificer"
@@ -1904,6 +1973,7 @@
          "number":"70",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.7",
          "subtypes":[
             "Drake"
          ],
@@ -1933,6 +2003,7 @@
          "number":"71",
          "power":"2",
          "rarity":"Uncommon",
+         "rating": "3.3",
          "subtypes":[
             "Aetherborn",
             "Rogue"
@@ -1963,6 +2034,7 @@
          "number":"72",
          "power":"4",
          "rarity":"Common",
+         "rating": "2.4",
          "subtypes":[
             "Aetherborn",
             "Artificer"
@@ -1992,6 +2064,7 @@
          "number":"73",
          "power":"5",
          "rarity":"Mythic Rare",
+         "rating": "1=4.7",
          "subtypes":[
             "Demon"
          ],
@@ -2021,6 +2094,7 @@
          "number":"74",
          "power":"2",
          "rarity":"Common",
+         "rating": "2.9",
          "subtypes":[
             "Human",
             "Rogue"
@@ -2050,6 +2124,7 @@
          "name":"Diabolic Tutor",
          "number":"75",
          "rarity":"Uncommon",
+         "rating": "1.4",
          "text":"Search your library for a card and put that card into your hand. Then shuffle your library.",
          "type":"Sorcery",
          "types":[
@@ -2074,6 +2149,7 @@
          "name":"Die Young",
          "number":"76",
          "rarity":"Common",
+         "rating": "2.9",
          "text":"Choose target creature. You get {E}{E} (two energy counters), then you may pay any amount of {E}. The creature gets -1/-1 until end of turn for each {E} paid this way.",
          "type":"Sorcery",
          "types":[
@@ -2099,6 +2175,7 @@
          "number":"77",
          "power":"4",
          "rarity":"Common",
+         "rating": "2.0",
          "subtypes":[
             "Crocodile"
          ],
@@ -2127,6 +2204,7 @@
          "name":"Eliminate the Competition",
          "number":"78",
          "rarity":"Rare",
+         "rating": "3.0",
          "text":"As an additional cost to cast Eliminate the Competition, sacrifice X creatures.\nDestroy X target creatures.",
          "type":"Sorcery",
          "types":[
@@ -2152,6 +2230,7 @@
          "number":"79",
          "power":"3",
          "rarity":"Uncommon",
+         "rating": "2.9",
          "subtypes":[
             "Human",
             "Warrior"
