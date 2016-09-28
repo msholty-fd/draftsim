@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <meta charset="utf-8">
+    <base href="/">
+    <!-- build:remove:prod -->
+    <!-- /build -->
+    <title>Draftsim</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-pink.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="icon" type="image/jpg" href="http://draftsim.com/beta/assets/img/favicon.png" />
+</head>
+
+<body ng-app="ds" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <global-header class="mdl-layout__header is-casting-shadow"></global-header>
+    <global-header-drawer></global-header-drawer>
+    <div ui-view class="ui-view-container" ng-class="currentStateName"></div>
+    <global-footer></global-footer>
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+
+</html>

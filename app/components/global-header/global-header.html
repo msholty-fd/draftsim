@@ -1,0 +1,17 @@
+<header>
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">
+            <a href ui-sref="home">
+                <img class="logo-link" ng-src="http://draftsim.com/beta/assets/img/draftsim.png">
+            </a>
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="global-header-draft-menu">Draft</button>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="global-header-draft-menu">
+                <a ng-repeat="set in globalHeader.activeSets" ui-sref="draftLive({set: set.abbr})"><li class="mdl-menu__item">{{set.name}}</li></a>
+            </ul>
+            <a href ng-repeat="link in globalHeader.menuLinks" class="mdl-navigation__link" ui-sref="{{link.sref}}">{{link.text}}</a>
+        </nav>
+    </div>
+</header>

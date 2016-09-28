@@ -1,0 +1,131 @@
+---
+  extends: 'eslint:recommended'
+  parser: 'babel-eslint'
+  plugins:
+    - 'import'
+    - 'jasmine'
+  settings:
+    import/ignore:
+      - bower_components
+      - node_modules
+      - \.html$
+    import/resolver:
+      node: { paths: ['./node_modules', './app'] }
+  env:
+    browser: true
+    node: true
+    es6: true
+    jasmine: true
+    protractor: true
+  ecmaFeatures:
+    modules: true
+  globals:
+    expect: true
+    inject: true
+    spyOn: true
+    angular: true
+    _: true
+    moment: true
+  rules:
+    # basic rules
+    no-console: 1
+    no-debugger: 1
+    no-extra-parens:
+      - 2
+      - 'functions'
+    no-unexpected-multiline:
+      - 2
+    complexity:
+      - 0
+      - 4
+    dot-location:
+      - 2
+      - 'property'
+    no-caller: 2
+    no-case-declarations: 2
+    no-labels: 2
+    # TODO: re-enable later
+    no-magic-numbers: 0
+    no-multi-str: 2
+    no-proto: 2
+    no-return-assign: 2
+    no-script-url: 2
+    no-self-compare: 2
+    no-sequences: 2
+    no-throw-literal: 2
+    no-unused-expressions:
+      - 2
+      - allowShortCircuit: true
+    no-useless-call: 2
+    no-useless-concat: 2
+    no-void: 2
+    no-with: 2
+    radix: 2
+    vars-on-top: 1
+    wrap-iife: 2
+    yoda: 2
+    strict:
+      - 2
+      - 'never'
+    no-shadow-restricted-names: 2
+    no-shadow: 2
+    no-undef-init: 2
+    no-undef: 2
+    no-use-before-define:
+      - 2
+      - 'nofunc'
+    # ES6
+    arrow-parens: 2
+    arrow-spacing: 2
+    constructor-super: 2
+    no-confusing-arrow: 2
+    no-class-assign: 2
+    no-useless-constructor: 2
+    no-var: 2
+    # nice to have
+    object-shorthand: 2
+    prefer-const: 2
+    prefer-rest-params: 2
+    prefer-spread: 2
+    prefer-template: 2
+    require-yield: 2
+    # import plugin rules
+    import/no-unresolved: 1
+    import/named: 2
+    import/namespace: 2
+    import/default: 2
+    import/export: 2
+    import/imports-first: 2
+    import/no-duplicates: 2
+    # style
+    block-spacing: 2
+    brace-style: 2
+    comma-spacing: 2
+    comma-style: 2
+    eol-last: 2
+    key-spacing: 2
+    keyword-spacing: 2
+    new-cap:
+      - 2
+      - capIsNewExceptions:
+        - $.Event
+    new-parens: 2
+    newline-after-var: 2
+    no-array-constructor: 2
+    no-bitwise: 2
+    no-nested-ternary: 2
+    no-new-object: 2
+    no-whitespace-before-property: 2
+    no-spaced-func: 2
+    no-unneeded-ternary: 2
+    quotes:
+      - 2
+      - 'single'
+      - 'avoid-escape'
+    semi:
+      - 2
+      - 'always'
+    # Jasmine
+    jasmine/no-focused-tests: 2
+    jasmine/no-disabled-tests: 1
+    jasmine/no-suite-callback-args: 2
