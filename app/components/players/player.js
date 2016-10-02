@@ -4,7 +4,6 @@ export default class Player {
     constructor($rootScope, $interval, position) {
         this.collection = [];
         this.packs = [];
-        this.isAI = true;
         this.position = position;
         this.currentPack = null;
         this.currentPackIndex = -1;
@@ -12,6 +11,8 @@ export default class Player {
         this.packQueue = []; // where packs go if player isn't done drafting a card from current pack
         this.$rootScope = $rootScope;
         this.$interval = $interval;
+        this.deck = [];
+        this.AI = null;
     }
 
     pickCard(card) {
@@ -23,6 +24,14 @@ export default class Player {
         this.currentPack = null;
 
         this.passPack(pack);
+    }
+
+    addCardToDeck(card) {
+        this.deck.push(card);
+    }
+
+    removeCardFromDeck(index) {
+        this.deck.splice(index, 1);
     }
 
     pickRandomCard() {
@@ -69,19 +78,5 @@ export default class Player {
         if (this.packQueue.length) {
             this.currentPack = this.packQueue.splice(0, 1)[0];
         }
-    }
-
-    startAI() {
-        this.interval = this.$interval(() => {
-            if (this.currentPack) {
-                this.pickRandomCard();
-            } else if (this.packQueue.length) {
-                this.takePackFromQueue();
-            }
-        }, 100);
-    }
-
-    endAI() {
-        this.interval.cancel();
     }
 }

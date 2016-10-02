@@ -4,6 +4,7 @@ import 'angular-ui-router';
 import playersModule from '../components/players';
 import boosterPackModule from '../components/booster-pack';
 import apiModule from '../components/api';
+import snackbarModule from '../components/snackbar';
 
 import DraftController from './draft-controller.js';
 import DraftHomeController from './draft-home-controller.js';
@@ -16,7 +17,8 @@ export default angular.module('ds.draft', [
     'ui.router',
     playersModule.name,
     boosterPackModule.name,
-    apiModule.name
+    apiModule.name,
+    snackbarModule.name
 ])
 
 .config(function($urlRouterProvider, $stateProvider) {

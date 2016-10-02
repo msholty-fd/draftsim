@@ -1,14 +1,17 @@
 import _ from 'lodash';
 import Player from './player';
+import AIs from './ai';
 
 export default class PlayersService {
     constructor($rootScope, $interval) {
         this.$rootScope = $rootScope;
         this.$interval = $interval;
+
         this.packCompleteCount = 0;
         this.roundCompleteCount = 0;
         this.passDirections = ['left', 'right', 'left'];
         this.PACKS_PER_PLAYER = 3;
+        this.players = [];
 
         $rootScope.$on('player:pack-complete', () => {
             this.packCompleteCount++;
@@ -26,7 +29,7 @@ export default class PlayersService {
                     });
                 } else {
                     _(this.players).each((player) => {
-                        player.endAI();
+                        player.AI.endAI();
                     });
                 }
             }
@@ -37,18 +40,26 @@ export default class PlayersService {
         this.players = [];
 
         _.times(playerCount, (index) => {
-            this.players.push(new Player(this.$rootScope, this.$interval, index));
-            this.players[0].isAI = false; // hack until multiplayer is working
+            const newPlayer = this.getNewPlayer(index);
+
+            // TODO: add AI to players that are not human instead of all but 0th
+            if (index > 0) {
+                newPlayer.AI = new AIs['HighestRatingAI'](newPlayer, this.$interval);
+            }
+
+            this.players.push(newPlayer);
             this.$rootScope.$on(`player:${index}:pass-pack`, (event, params) => {
-                this.passPack(params.pack, params.position, params.direction);
+                this.passPack(params.pack, params.position);
             });
         });
+    }
 
-        _.filter(this.players, 'isAI')
-            .forEach((player) => {
-                // AI Logic
-                player.startAI();
-            });
+    startDraft() {
+        _.forEach(this.players, (player) => {
+            if (player.AI) {
+                player.AI.startAI();
+            }
+        });
     }
 
     passPack(pack, position) {
@@ -62,5 +73,9 @@ export default class PlayersService {
         }
 
         this.players[passTarget].receivePack(pack);
+    }
+
+    getNewPlayer(index) {
+        return new Player(this.$rootScope, this.$interval, index);
     }
 }

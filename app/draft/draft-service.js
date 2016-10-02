@@ -24,11 +24,12 @@ export default class DraftService {
         // Each player gets 3 random packs from the set
         return this.setsApi.getSet(setAbbr).then((response) => {
             this.set = response.data;
+            this.BoosterPackService.setSet(setAbbr, this.set);
             this.PlayersService.initializePlayers(playerCount);
 
             _(this.PlayersService.players).each((player) => {
-                _.times(DraftConstants.PACKS_PER_PLAYER, () => {
-                    const pack = this.BoosterPackService.createBoosterPack(this.set);
+                _.each(this.set.limited.draft, (set) => {
+                    const pack = this.BoosterPackService.createBoosterPack(set);
 
                     player.packs.push(pack);
                 });
@@ -36,5 +37,9 @@ export default class DraftService {
                 player.openPack();
             });
         });
+    }
+
+    startDraft() {
+        this.PlayersService.startDraft();
     }
 }
