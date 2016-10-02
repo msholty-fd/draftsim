@@ -2,7 +2,12 @@ import _ from 'lodash';
 import BoosterPack from './booster-pack.js';
 
 export default class BoosterPackService {
-    createBoosterPack(set) {
+    constructor() {
+        this.sets = [];
+    }
+
+    createBoosterPack(setAbbr) {
+        const set = this.sets[setAbbr];
         const boosterPack = new BoosterPack();
         const setGroupedByRarity = _.groupBy(set.cards, (card) => {
             return _.toLower(card.rarity);
@@ -28,6 +33,14 @@ export default class BoosterPackService {
         });
 
         return boosterPack;
+    }
+
+    setSet(setAbbr, set) {
+        this.sets[setAbbr] = set;
+    }
+
+    getSet(setAbbr) {
+        return this.sets[setAbbr];
     }
 
     // TODO: do not add duplicate cards to a pack unless its a foil
