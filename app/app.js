@@ -5,6 +5,7 @@ import 'angular-ui-router';
 import componentsModule from './components';
 import homeModule from './home';
 import draftModule from './draft';
+import sealedModule from './sealed';
 
 import NotFoundTemplate from './404.html';
 
@@ -12,6 +13,7 @@ angular.module('ds', [
     componentsModule.name,
     homeModule.name,
     draftModule.name,
+    sealedModule.name,
     'ui.router'
 ])
 

@@ -1,0 +1,25 @@
+<h1>Sealed Pool</h1>
+<div class="player-pack-view">
+    <ol class="mdl-list">
+        <img ng-repeat="card in sealedLive.myPlayer.collection track by $index"
+            ng-src="{{sealedLive.getImageSrc(card.name)}}"
+            alt="{{card.name}}"
+            title="{{card.name}}"
+            id="{{card.multiverseid}}"
+            ng-click="sealedLive.addCardToDeck(card)"
+            ng-hide="card.picked">
+    </ol>
+
+    <h3>My Deck</h3>
+    <ol>
+        <img ng-repeat="card in sealedLive.myPlayer.deck track by $index orderBy: card.rarity"
+            ng-src="{{sealedLive.getImageSrc(card.name)}}"
+            alt="{{card.name}}"
+            title="{{card.name}}"
+            id="{{card.multiverseid}}"
+            ng-click="sealedLive.addCardToDeck(card)"
+            ng-hide="card.picked">
+    </ol>
+    <p ng-hide="sealedLive.myPlayer.deck.length">Empty</p>
+    <hr>
+</div>

@@ -1,0 +1,5 @@
+<h1>Sealed home</h1>
+<p>Please choose a set from the following sets to see a sample sealed pool</p>
+<ul>
+    <li ng-repeat="set in sealedHome.activeSets"><a href ui-sref="sealedLive({set: set.abbr})">{{set.name}}</a></li>
+</ul>
