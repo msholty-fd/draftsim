@@ -6,27 +6,28 @@
             id="{{card.multiverseid}}"
             ng-click="draft.pickCard(draftLive.myPosition, card)"
             ng-hide="card.picked"> -->
-    <div class="player-pack-view">
+    <div class="pack-view">
         <h2>Pick {{draftLive.myPlayer.currentPickIndex+1}}, Pack {{draftLive.myPlayer.currentPackIndex + 1}}</h2>
-        <ol class="mdl-list">
-            <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index""
-                ng-src="{{draftLive.getImageSrc(card.name)}}"
-                alt="{{card.name}}"
-                title="{{card.name}}"
-                id="{{card.multiverseid}}"
-                ng-click="draftLive.pickCard(card)"
-                ng-hide="card.picked">
-        </ol>
-
-        <h3>Pack Number: {{draftLive.myPlayer.currentPackIndex + 1}}</h3>
-        <h3>Queue Length: {{draftLive.myPlayer.packQueue.length}}</h3>
-        <h3>Drafted Cards</h3>
-        <ol>
-            <li ng-repeat="card in draftLive.myPlayer.collection track by $index">
-                {{card.name}}
-            </li>
-        </ol>
-        <p ng-if="draftLive.myPlayer.collection.length === 0">Empty</p>
-        <hr>
+        <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index"
+            class="booster-pack-card"
+            ng-src="{{draftLive.getImageSrc(card.name)}}"
+            alt="{{card.name}}"
+            title="{{card.name}}"
+            id="{{card.multiverseid}}"
+            ng-click="draftLive.pickCard(card)"
+            ng-hide="card.picked">
     </div>
+    <div class="deck-view">
+        <h3>Pack Number: {{draftLive.myPlayer.currentPackIndex + 1}}</h3>
+        <img ng-repeat="card in draftLive.myPlayer.collection track by $index"
+            class="booster-pack-card"
+            ng-src="{{draftLive.getImageSrc(card.name)}}"
+            alt="{{card.name}}"
+            title="{{card.name}}"
+            id="{{card.multiverseid}}"
+            ng-click="draftLive.pickCard(card)">
+        <p ng-if="draftLive.myPlayer.collection.length === 0">Empty</p>
+    </div>
+
+    <hr>
 </div>
