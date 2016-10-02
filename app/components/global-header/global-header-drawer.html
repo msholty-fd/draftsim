@@ -1,9 +1,6 @@
-<div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Draftsim</span>
-    <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Draft</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-    </nav>
-</div>
+<span class="mdl-layout-title">Draftsim</span>
+<nav class="mdl-navigation">
+    <a class="mdl-navigation__link" menu-close href ui-sref="draftHome">Draft</a>
+    <a class="mdl-navigation__link" menu-close href ui-sref="sealedHome">Sealed</a>
+    <a class="mdl-navigation__link" menu-close href ng-repeat="link in globalHeaderDrawer.menuLinks" menu-close ui-sref="{{link.sref}}">{{link.text}}</a>
+</nav>

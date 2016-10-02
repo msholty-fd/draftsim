@@ -1,12 +1,9 @@
 import _ from 'lodash';
 
 export default class GlobalHeaderController {
-    constructor(setsApi) {
+    constructor(setsApi, $state) {
         this.menuLinks = [
             {
-                text: 'Sealed',
-                sref: 'sealed'
-            }, {
                 text: 'Methodology',
                 sref: 'methodology'
             }, {
@@ -22,5 +19,8 @@ export default class GlobalHeaderController {
                 this.activeSets.push(set);
             });
         });
+
+        this.isDraftMenuOpen = false;
+        this.$state = $state;
     }
 }

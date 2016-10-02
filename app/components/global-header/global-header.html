@@ -10,6 +10,12 @@
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="global-header-draft-menu">Draft</button>
             <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="global-header-draft-menu">
                 <a ng-repeat="set in globalHeader.activeSets" ui-sref="draftLive({set: set.abbr})"><li class="mdl-menu__item">{{set.name}}</li></a>
+                <a ui-sref="draftHome"><li class="mdl-menu__item">See More Sets...</li></a>
+            </ul>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="global-header-sealed-menu">Sealed</button>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="global-header-sealed-menu">
+                <a ng-repeat="set in globalHeader.activeSets" ui-sref="sealedLive({set: set.abbr})"><li class="mdl-menu__item">{{set.name}}</li></a>
+                <a ui-sref="sealedHome"><li class="mdl-menu__item">See More Sets...</li></a>
             </ul>
             <a href ng-repeat="link in globalHeader.menuLinks" class="mdl-navigation__link" ui-sref="{{link.sref}}">{{link.text}}</a>
         </nav>
