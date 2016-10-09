@@ -1,6 +1,7 @@
 import angular from 'angular';
 
 import 'angular-ui-router';
+import 'angular-material-design-lite';
 
 import componentsModule from './components';
 import homeModule from './home';
@@ -14,7 +15,8 @@ angular.module('ds', [
     homeModule.name,
     draftModule.name,
     sealedModule.name,
-    'ui.router'
+    'ui.router',
+    'mdl'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -41,7 +43,9 @@ angular.module('ds', [
         $timeout(() => updateMdl());
     });
 
-    $rootScope.$on('$viewContentLoaded', () => updateMdl());
+    $rootScope.$on('$viewContentLoaded', () => {
+        $timeout(() => updateMdl());
+    });
 });
 
 function updateMdl() {
