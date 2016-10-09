@@ -24,49 +24,25 @@
 <div class="draft" ng-if="draftLive.isDraftStarted">
     <div class="pack-view">
         <h2>Pick {{draftLive.myPlayer.currentPickIndex+1}}, Pack {{draftLive.myPlayer.currentPackIndex + 1}}</h2>
-        <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index"
-            class="booster-pack-card"
-            ng-src="{{draftLive.getImageSrc(card.name)}}"
-            alt="{{card.name}}"
-            title="{{card.name}}"
-            id="{{card.multiverseid}}"
-            ng-click="draftLive.pickCard(card)"
-            ng-hide="card.picked">
+        <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-click="draftLive.pickCard(card)" ng-hide="card.picked">
     </div>
-    <div class="collection-view">
+    <div class="collection-view" mdl-upgrade>
         <h2>My Picks</h2>
-        <div class="btn-group" uib-dropdown is-open="status.isopen">
-          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-            View <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-            <li role="menuitem"><a href="#"></a></li>
-            <li role="menuitem"><a href="#">Another action</a></li>
-            <li role="menuitem"><a href="#">Something else here</a></li>
-          </ul>
-        </div>
+        <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Sort
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+            <li class="mdl-menu__item" ng-click="draftLive.sortByColor()">Color</li>
+            <li class="mdl-menu__item" ng-click="draftLive.sortByCMC()">Converted Mana Cost</li>
+        </ul>
         <div class="collection-container">
-            <img ng-repeat="card in draftLive.myPlayer.collection track by $index"
-                class="booster-pack-card"
-                ng-src="{{draftLive.getImageSrc(card.name)}}"
-                alt="{{card.name}}"
-                title="{{card.name}}"
-                id="{{card.multiverseid}}"
-                ng-hide="card.inDeck"
-                ng-click="draftLive.addCardToDeck(card)">
+            <img ng-repeat="card in draftLive.myPlayer.collection track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-hide="card.inDeck" ng-click="draftLive.addCardToDeck(card)">
             <p ng-if="draftLive.myPlayer.collection.length === 0">Empty</p>
         </div>
     </div>
     <div class="deck-view">
         <h2>My Deck</h2>
-        <img ng-repeat="card in draftLive.myPlayer.collection track by $index"
-            class="booster-pack-card"
-            ng-src="{{draftLive.getImageSrc(card.name)}}"
-            alt="{{card.name}}"
-            title="{{card.name}}"
-            id="{{card.multiverseid}}"
-            ng-show="card.inDeck"
-            ng-click="draftLive.removeCardFromDeck(card)">
+        <img ng-repeat="card in draftLive.myPlayer.collection track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-show="card.inDeck" ng-click="draftLive.removeCardFromDeck(card)">
         <p ng-if="draftLive.myPlayer.deck.length === 0">Empty</p>
     </div>
 </div>
