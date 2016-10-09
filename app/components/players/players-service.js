@@ -42,11 +42,6 @@ export default class PlayersService {
         _.times(playerCount, (index) => {
             const newPlayer = this.getNewPlayer(index);
 
-            // TODO: add AI to players that are not human instead of all but 0th
-            if (index > 0) {
-                newPlayer.AI = new AIs['HighestRatingAI'](newPlayer, this.$interval);
-            }
-
             this.players.push(newPlayer);
             this.$rootScope.$on(`player:${index}:pass-pack`, (event, params) => {
                 this.passPack(params.pack, params.position);
@@ -56,7 +51,8 @@ export default class PlayersService {
 
     startDraft() {
         _.forEach(this.players, (player) => {
-            if (player.AI) {
+            if (player.isAI) {
+                player.AI = new AIs['HighestRatingAI'](player, this.$interval);
                 player.AI.startAI();
             }
         });

@@ -13,6 +13,7 @@ export default class Player {
         this.$interval = $interval;
         this.deck = [];
         this.AI = null;
+        this.isAI = true;
     }
 
     pickCard(card) {

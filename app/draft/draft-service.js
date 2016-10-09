@@ -15,10 +15,6 @@ export default class DraftService {
         return this.set;
     }
 
-    getMyPlayer(playerPosition) {
-        return this.PlayersService.players[playerPosition];
-    }
-
     initializeDraft(setAbbr, playerCount) {
         // Create playerCount players
         // Each player gets 3 random packs from the set

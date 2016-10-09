@@ -1,11 +1,27 @@
-<div class="draft-view" ng-if="draftLive.isDraftStarted">
-    <!-- <img ng-repeat="card in draftLive.PlayersService.players[draftLive.myPosition].currentPack"
-            ng-src="Images/{{draft.currentSet}}/{{card.name}}"
-            alt="card.name"
-            title="card.name"
-            id="{{card.multiverseid}}"
-            ng-click="draft.pickCard(draftLive.myPosition, card)"
-            ng-hide="card.picked"> -->
+<div class="pre-draft" ng-if="!draftLive.isDraftStarted">
+    <h2>Draft Options</h2>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Players</h2>
+        </div>
+        <ul class="mdl-list">
+            <li class="mdl-list__item" ng-repeat="player in draftLive.players track by $index">
+                <span class="mdl-list__item-primary-content">
+                    <i class="material-icons  mdl-list__item-avatar">person</i>
+                    <input ng-if="!player.isAI" type="text" ng-model="player.name"/>
+                    <span ng-if="player.isAI" type="text">AI Player</span>
+                </span>
+                <span class="mdl-list__item-secondary-action">
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-{{$index}}">
+                        <input type="checkbox" id="list-switch-{{$index}}" class="mdl-switch__input" ng-checked="player.isAI" ng-model="player.isAI"/>
+                    </label>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="draftLive.startDraft()">Start Draft</button>
+</div>
+<div class="draft" ng-if="draftLive.isDraftStarted">
     <div class="pack-view">
         <h2>Pick {{draftLive.myPlayer.currentPickIndex+1}}, Pack {{draftLive.myPlayer.currentPackIndex + 1}}</h2>
         <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index"
@@ -17,15 +33,40 @@
             ng-click="draftLive.pickCard(card)"
             ng-hide="card.picked">
     </div>
+    <div class="collection-view">
+        <h2>My Picks</h2>
+        <div class="btn-group" uib-dropdown is-open="status.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+            View <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a href="#"></a></li>
+            <li role="menuitem"><a href="#">Another action</a></li>
+            <li role="menuitem"><a href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <div class="collection-container">
+            <img ng-repeat="card in draftLive.myPlayer.collection track by $index"
+                class="booster-pack-card"
+                ng-src="{{draftLive.getImageSrc(card.name)}}"
+                alt="{{card.name}}"
+                title="{{card.name}}"
+                id="{{card.multiverseid}}"
+                ng-hide="card.inDeck"
+                ng-click="draftLive.addCardToDeck(card)">
+            <p ng-if="draftLive.myPlayer.collection.length === 0">Empty</p>
+        </div>
+    </div>
     <div class="deck-view">
-        <h3>Pack Number: {{draftLive.myPlayer.currentPackIndex + 1}}</h3>
+        <h2>My Deck</h2>
         <img ng-repeat="card in draftLive.myPlayer.collection track by $index"
             class="booster-pack-card"
             ng-src="{{draftLive.getImageSrc(card.name)}}"
             alt="{{card.name}}"
             title="{{card.name}}"
             id="{{card.multiverseid}}"
-            ng-click="draftLive.pickCard(card)">
-        <p ng-if="draftLive.myPlayer.collection.length === 0">Empty</p>
+            ng-show="card.inDeck"
+            ng-click="draftLive.removeCardFromDeck(card)">
+        <p ng-if="draftLive.myPlayer.deck.length === 0">Empty</p>
     </div>
 </div>
