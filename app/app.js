@@ -29,13 +29,21 @@ angular.module('ds', [
 })
 
 .config(function($locationProvider) {
+    'ngInject';
     $locationProvider.html5Mode(true);
 })
 
-.run(function($rootScope, $state) {
+.run(function($rootScope, $state, $timeout) {
     'ngInject';
 
     $rootScope.$on('$stateChangeSuccess', function() {
         $rootScope.currentStateName = $state.current.name;
+        $timeout(() => updateMdl());
     });
+
+    $rootScope.$on('$viewContentLoaded', () => updateMdl());
 });
+
+function updateMdl() {
+    componentHandler.upgradeAllRegistered(); // eslint-disable-line no-undef
+}
