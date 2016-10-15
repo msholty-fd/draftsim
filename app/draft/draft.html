@@ -11,7 +11,7 @@
                     <input ng-if="!player.isAI" type="text" ng-model="player.name"/>
                     <span ng-if="player.isAI" type="text">AI Player</span>
                 </span>
-                <span class="mdl-list__item-secondary-action">
+                <span class="mdl-list__item-secondary-action" mdl-upgrade>
                     <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-{{$index}}">
                         <input type="checkbox" id="list-switch-{{$index}}" class="mdl-switch__input" ng-checked="player.isAI" ng-model="player.isAI"/>
                     </label>
