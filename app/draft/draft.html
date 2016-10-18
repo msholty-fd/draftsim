@@ -26,20 +26,8 @@
         <h2>Pick {{draftLive.myPlayer.currentPickIndex+1}}, Pack {{draftLive.myPlayer.currentPackIndex + 1}}</h2>
         <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-click="draftLive.pickCard(card)" ng-hide="card.picked">
     </div>
-    <div class="collection-view" mdl-upgrade>
-        <h2>My Picks</h2>
-        <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-            Sort
-        </button>
-        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-            <li class="mdl-menu__item" ng-click="draftLive.sortByColor()">Color</li>
-            <li class="mdl-menu__item" ng-click="draftLive.sortByCMC()">Converted Mana Cost</li>
-        </ul>
-        <div class="collection-container">
-            <img ng-repeat="card in draftLive.myPlayer.collection track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-hide="card.inDeck" ng-click="draftLive.addCardToDeck(card)">
-            <p ng-if="draftLive.myPlayer.collection.length === 0">Empty</p>
-        </div>
-    </div>
+    <h2>My Drafted Cards</h2>
+    <collection-view collection="draftLive.myPlayer.collection" current-set="draftLive.currentSet"></collection-view>
     <div class="deck-view">
         <h2>My Deck</h2>
         <img ng-repeat="card in draftLive.myPlayer.collection track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-show="card.inDeck" ng-click="draftLive.removeCardFromDeck(card)">
