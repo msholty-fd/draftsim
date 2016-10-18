@@ -6,12 +6,6 @@
     "type": "git",
     "url": "https://github.com/msholty-fd/draftsim"
   },
-  "git": {
-    "scripts": {
-      "pre-commit": "./hooks/pre-commit.js",
-      "commit-msg": "./node_modules/.bin/validate-commit-msg $1"
-    }
-  },
   "engines": {
     "node": ">=4.0.0"
   },
@@ -35,7 +29,6 @@
     "estraverse-fb": "^1.3.1",
     "event-stream": "^3.1.7",
     "git-rev-sync": "^1.5.0",
-    "git-scripts": "^0.2.1",
     "glob": "^5.0.15",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
@@ -91,8 +84,8 @@
     "yargs": "^3.26.0"
   },
   "scripts": {
-    "build": "NODE_ENV=production ./node_modules/.bin/gulp",
-    "dev": "NODE_ENV=development ./node_modules/.bin/gulp serve",
+    "build": "set NODE_ENV=production && gulp",
+    "dev": "set NODE_ENV=development && gulp serve",
     "test": "karma start karma-unit.js",
     "preci": "./node_modules/.bin/npm run build",
     "ci": "karma start karma-unit.js --single-run",
