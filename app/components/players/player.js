@@ -4,16 +4,24 @@ export default class Player {
     constructor($rootScope, $interval, position) {
         this.collection = [];
         this.packs = [];
-        this.position = position;
         this.currentPack = null;
         this.currentPackIndex = -1;
         this.currentPickIndex = 0;
         this.packQueue = []; // where packs go if player isn't done drafting a card from current pack
-        this.$rootScope = $rootScope;
-        this.$interval = $interval;
         this.deck = [];
         this.AI = null;
         this.isAI = true;
+        this.colorCommitment = {
+            White: 0,
+            Black: 0,
+            Blue: 0,
+            Green: 0,
+            Red: 0
+        };
+
+        this.position = position;
+        this.$rootScope = $rootScope;
+        this.$interval = $interval;
     }
 
     pickCard(card) {
