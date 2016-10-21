@@ -1,0 +1,9 @@
+.magic-card {
+	&__image {
+		width: 223px;
+		&:hover {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+	}
+}

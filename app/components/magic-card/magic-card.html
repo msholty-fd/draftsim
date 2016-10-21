@@ -1,0 +1,7 @@
+<span class="magic-card">
+    <img class="magic-card__image" ng-src="{{MagicCardController.getImageSrc()}}" alt="{{MagicCardController.card.name}}" title="{{card.name}}" id="{{MagicCardController.card.multiverseid}}" ng-click="MagicCardController.cardClicked({card: MagicCardController.card})">
+    <div class="magic-card__stats" ng-show="MagicCardController.showStats">
+	    <div class="magic-card__rating">Card Rating: {{MagicCardController.card.rating}}</div>
+	    <div class="magic-card__my-rating">Biased Rating: {{MagicCardController.card.myRating}}</div>
+	</div>
+</span>
