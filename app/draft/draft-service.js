@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import DraftConstants from './draft-constants.js';
 
 export default class DraftService {
     constructor(PlayersService, BoosterPackService, $rootScope, setsApi) {
