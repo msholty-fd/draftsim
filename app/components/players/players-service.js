@@ -11,7 +11,8 @@ export default class PlayersService {
         this.roundCompleteCount = 0;
         this.passDirections = ['left', 'right', 'left'];
         this.PACKS_PER_PLAYER = 3;
-        this.players = [];
+
+        this.initializePlayers();
 
         $rootScope.$on('player:pack-complete', () => {
             this.packCompleteCount++;
@@ -49,10 +50,11 @@ export default class PlayersService {
         });
     }
 
-    startDraft() {
-        _.forEach(this.players, (player) => {
+    startPlayers() {
+        _.each(this.players, (player) => {
+            player.AI = new AIs['HighestRatingAI'](player, this.$interval);
+            player.openPack();
             if (player.isAI) {
-                player.AI = new AIs['HighestRatingAI'](player, this.$interval);
                 player.AI.startAI();
             }
         });

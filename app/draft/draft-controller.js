@@ -3,7 +3,6 @@ import DRAFT_CONSTANTS from './draft-constants';
 export default class DraftController {
     constructor(DraftService, $stateParams, SnackbarService, PlayersService) {
         this.currentSet = $stateParams.set;
-        this.playerCount = DRAFT_CONSTANTS.DEFAULT_PLAYER_COUNT; // For now just support 8 players
         this.DraftService = DraftService;
         this.SnackbarService = SnackbarService;
         this.PlayersService = PlayersService;
@@ -11,19 +10,29 @@ export default class DraftController {
         this.myPosition = 0;
         this.isDraftStarted = false;
 
-        DraftService.initializeDraft(this.currentSet, this.playerCount).then(() => {
-            this.myPlayer = PlayersService.players[this.myPosition];
-            this.myPlayer.isAI = false;
-        });
+        PlayersService.initializePlayers(DRAFT_CONSTANTS.DEFAULT_PLAYER_COUNT);
+        DraftService.initializeDraft(this.currentSet);
+        PlayersService.players[this.myPosition].isAI = false; // my player is not a robot
     }
 
     get players() {
         return this.PlayersService.players;
     }
 
+    addPlayer() {
+        this.PlayersService.addPlayer();
+    }
+
+    removePlayer(index) {
+        this.PlayersService.removePlayer(index);
+    }
+
     startDraft() {
-        this.DraftService.startDraft();
-        this.isDraftStarted = true;
+        this.DraftService.startDraft().then(() => {
+            this.PlayersService.startPlayers();
+            this.myPlayer = this.PlayersService.players[this.myPosition];
+            this.isDraftStarted = true;
+        });
     }
 
     pickCard(card) {
@@ -56,11 +65,5 @@ export default class DraftController {
                 timeout: 2000
             });
         }
-    }
-
-    getImageSrc(cardName) {
-        const cardSrcUrl = cardName.split(' ').join('_');
-
-        return `http://draftsim.com/Images/${this.currentSet}/${cardSrcUrl}.jpg`;
     }
 }

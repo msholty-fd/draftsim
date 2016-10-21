@@ -1,4 +1,5 @@
 import AI_CONSTANTS from './ai-constants';
+import _ from 'lodash';
 
 export default class AI {
     constructor(player, $interval) {
@@ -30,7 +31,6 @@ export default class AI {
     }
 
     chooseCard() {
-        this.updateCardRatings();
         const highestRatedCard = this.getHighestRatedCard();
 
         this.updateColorCommitment(highestRatedCard);
@@ -38,6 +38,7 @@ export default class AI {
         return highestRatedCard;
     }
 
+    // child classes should overwrite this method
     updateCardRatings() {
         return {};
     }
@@ -52,7 +53,7 @@ export default class AI {
         let isCardOnColor = !card.colors; // colorless cards are on color by default
 
         _.each(card.colors, (color) => {
-            if (this.player.colorCommitment[color] > 0) {
+            if (this.player.colorCommitment[color] > AI_CONSTANTS.COLOR_COMMIT_THRESHOLD) {
                 isCardOnColor = true;
             }
         });

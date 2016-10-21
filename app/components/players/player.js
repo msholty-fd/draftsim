@@ -58,14 +58,14 @@ export default class Player {
                 position: this.position
             });
         } else {
-            // After passing, check to see if there is a pack waiting in your queue
-            this.takePackFromQueue();
-
             // Pack still has cards, pass it
             this.$rootScope.$broadcast(`player:${this.position}:pass-pack`, {
                 pack,
                 position: this.position
             });
+
+            // After passing, check to see if there is a pack waiting in your queue
+            this.takePackFromQueue();
         }
     }
 
@@ -81,11 +81,13 @@ export default class Player {
         this.currentPack = this.packs.splice(0, 1)[0];
         this.currentPickIndex = 0;
         this.currentPackIndex++;
+        this.AI.updateCardRatings();
     }
 
     takePackFromQueue() {
         if (this.packQueue.length) {
             this.currentPack = this.packQueue.splice(0, 1)[0];
+            this.AI.updateCardRatings();
         }
     }
 }

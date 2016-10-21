@@ -12,19 +12,31 @@
                     <span ng-if="player.isAI" type="text">AI Player</span>
                 </span>
                 <span class="mdl-list__item-secondary-action" mdl-upgrade>
+                    <span class="mdl-list__item-secondary-info">AI?</span>
                     <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-{{$index}}">
                         <input type="checkbox" id="list-switch-{{$index}}" class="mdl-switch__input" ng-checked="player.isAI" ng-model="player.isAI"/>
                     </label>
                 </span>
             </li>
+            <li class="mdl-list__item add-player">
+                <span class="mdl-list__item-primary-content">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="global-header-draft-menu">
+                        <i class="material-icons">add_circle</i>
+                        <span type="text">Add Player</span>
+                    </button>
+                </span>
+            </li> 
         </ul>
     </div>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="draftLive.startDraft()">Start Draft</button>
 </div>
 <div class="draft" ng-if="draftLive.isDraftStarted">
-    <div class="pack-view">
+    <div class="booster-pack">
         <h2>Pick {{draftLive.myPlayer.currentPickIndex+1}}, Pack {{draftLive.myPlayer.currentPackIndex + 1}}</h2>
-        <img ng-repeat="card in draftLive.myPlayer.currentPack.cards track by $index" class="booster-pack-card" ng-src="{{draftLive.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-click="draftLive.pickCard(card)" ng-hide="card.picked">
+        <collection-view 
+            collection="draftLive.myPlayer.currentPack.cards"
+            card-clicked="draftLive.pickCard(card)"
+            hide-picked-cards="true"></collection-view>
     </div>
     <h2>My Drafted Cards</h2>
     <collection-view collection="draftLive.myPlayer.collection" current-set="draftLive.currentSet"></collection-view>
