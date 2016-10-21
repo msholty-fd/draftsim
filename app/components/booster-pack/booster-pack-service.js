@@ -22,11 +22,12 @@ export default class BoosterPackService {
                 rarityKey = isMythicPack ? 'mythic rare' : 'rare';
             }
 
-            const cardOptions = setGroupedByRarity[rarityKey];
+            const cardChoices = setGroupedByRarity[rarityKey];
 
-            if (cardOptions) {
-                const randomCard = this.getRandomCard(cardOptions);
+            if (cardChoices) {
+                const randomCard = this.getRandomCard(cardChoices);
 
+                randomCard.setAbbr = setAbbr;
                 boosterPack.cards.push(_.clone(randomCard));
             }
 
