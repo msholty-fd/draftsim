@@ -86,7 +86,7 @@
   "scripts": {
     "build": "set NODE_ENV=production && gulp",
     "dev": "set NODE_ENV=development && gulp serve",
-    "test": "karma start karma-unit.js",
+    "test": "karma start karma.conf.js",
     "preci": "./node_modules/.bin/npm run build",
     "ci": "karma start karma-unit.js --single-run",
     "presaucelabs-unit": "npm run build",
