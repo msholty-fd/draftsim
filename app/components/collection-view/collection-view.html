@@ -1,13 +1,12 @@
-<div class="collection-view" mdl-upgrade>
-    <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-        Sort
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-        <li class="mdl-menu__item" ng-click="collectionView.sortByColor()">Color</li>
-        <li class="mdl-menu__item" ng-click="collectionView.sortByCMC()">Converted Mana Cost</li>
-    </ul>
-    <div class="collection-container">
-        <img ng-repeat="card in collectionView.collection track by $index" class="booster-pack-card" ng-src="{{collectionView.getImageSrc(card.name)}}" alt="{{card.name}}" title="{{card.name}}" id="{{card.multiverseid}}" ng-hide="card.inDeck" ng-click="collectionView.addCardToDeck(card)">
-        <p ng-if="collectionView.myPlayer.collection.length === 0">Empty</p>
+<div class="collection-view-container" mdl-upgrade>
+    <div class="collection-view__controls">
+        <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Sort</button>
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+            <li class="mdl-menu__item" ng-click="collectionView.sortByColor()">Color</li>
+            <li class="mdl-menu__item" ng-click="collectionView.sortByCMC()">Converted Mana Cost</li>
+        </ul>
+    </div>
+    <div class="collection-view">
+        <magic-card ng-repeat="card in collectionView.collection track by $index" card="card" show-stats="true" ng-hide="collectionView.hidePickedCards && card.picked" card-clicked="collectionView.cardClicked({card: card})"></magic-card>
     </div>
 </div>
