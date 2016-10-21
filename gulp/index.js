@@ -6,7 +6,7 @@ import './tasks/copy';
 import './tasks/default';
 import './tasks/deploy';
 import './tasks/lint';
+import './tasks/open';
 import './tasks/sass';
 import './tasks/serve';
 import './tasks/watch';
-import './tasks/open';
