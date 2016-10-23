@@ -1,10 +1,12 @@
+import Promise from 'promise';
+
 import DraftController from './draft-controller.js';
 
 describe('DraftController', function() {
     beforeEach(function() {
-        this.DraftService = jasmine.createSpyObj('DraftService', ['initializeDraft']);
+        this.DraftService = jasmine.createSpyObj('DraftService', ['initializeDraft', 'startDraft']);
         this.$stateParams = {
-            currentSet: 'ABC'
+            set: 'ABC'
         };
         this.SnackbarService = jasmine.createSpyObj('SnackbarService', ['showMessage']);
         this.PlayersService = jasmine.createSpyObj('PlayersService', ['initializePlayers', 'addPlayer', 'removePlayer']);
@@ -21,9 +23,8 @@ describe('DraftController', function() {
     });
 
     describe('#constructor', function() {
-        it('should initialize the players and draft', function() {
+        it('should initialize the players', function() {
             expect(this.PlayersService.initializePlayers).toHaveBeenCalled();
-            expect(this.DraftService.initializeDraft).toHaveBeenCalled();
         });
 
         it('should set player 1 to non AI', function() {
@@ -75,6 +76,20 @@ describe('DraftController', function() {
                 message: `Drafted ${name}`,
                 timeout: 2000
             });
+        });
+    });
+
+    describe('#startDraft', function() {
+        it('should start the draft', function() {
+            const mockPromise = new Promise((resolve) => {
+                resolve();
+                expect(this.PlayersService.startPlayers).toHaveBeenCalled();
+                expect(this.controller.isDraftStarted).toBe(true);
+            });
+
+            this.DraftService.startDraft.and.returnValue(mockPromise);
+            this.controller.startDraft();
+            expect(this.DraftService.startDraft).toHaveBeenCalledWith(this.$stateParams.set);
         });
     });
 

@@ -2,8 +2,8 @@ import DRAFT_CONSTANTS from './draft-constants';
 
 export default class DraftController {
     constructor(DraftService, $stateParams, SnackbarService, PlayersService) {
-        this.currentSet = $stateParams.set;
         this.DraftService = DraftService;
+        this.currentSet = $stateParams.set;
         this.SnackbarService = SnackbarService;
         this.PlayersService = PlayersService;
 
@@ -11,8 +11,9 @@ export default class DraftController {
         this.isDraftStarted = false;
 
         PlayersService.initializePlayers(DRAFT_CONSTANTS.DEFAULT_PLAYER_COUNT);
-        DraftService.initializeDraft(this.currentSet);
         PlayersService.players[this.myPosition].isAI = false; // my player is not a robot
+
+        this.myPlayer = this.PlayersService.players[this.myPosition];
     }
 
     get players() {
@@ -28,9 +29,8 @@ export default class DraftController {
     }
 
     startDraft() {
-        this.DraftService.startDraft().then(() => {
+        this.DraftService.startDraft(this.currentSet).then(() => {
             this.PlayersService.startPlayers();
-            this.myPlayer = this.PlayersService.players[this.myPosition];
             this.isDraftStarted = true;
         });
     }
@@ -38,12 +38,10 @@ export default class DraftController {
     pickCard(card) {
         if (!card.picked) {
             const message = `Drafted ${card.name}`;
+            const timeout = DRAFT_CONSTANTS.SNACKBAR_TOAST_TIMEOUT;
 
             this.myPlayer.pickCard(card);
-            this.SnackbarService.showMessage({
-                message,
-                timeout: 2000
-            });
+            this.SnackbarService.showMessage({ message, timeout });
         }
     }
 
@@ -52,7 +50,7 @@ export default class DraftController {
             card.inDeck = true;
             this.SnackbarService.showMessage({
                 message: `Added ${card.name} to deck`,
-                timeout: 2000
+                timeout: DRAFT_CONSTANTS.SNACKBAR_TOAST_TIMEOUT
             });
         }
     }
@@ -62,7 +60,7 @@ export default class DraftController {
             card.inDeck = false;
             this.SnackbarService.showMessage({
                 message: `Removed ${card.name} from deck`,
-                timeout: 2000
+                timeout: DRAFT_CONSTANTS.SNACKBAR_TOAST_TIMEOUT
             });
         }
     }

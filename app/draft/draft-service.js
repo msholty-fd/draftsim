@@ -10,15 +10,9 @@ export default class DraftService {
         this.currentPackNumber = 0;
     }
 
-    get currentSet() {
-        return this.set;
-    }
-
-    initializeDraft(setAbbr) {
+    startDraft(setAbbr) {
         this.setAbbr = setAbbr;
-    }
-
-    startDraft() {
+        
         return this.setsApi.getSet(this.setAbbr).then((response) => {
             this.set = response.data;
             this.BoosterPackService.setSet(this.setAbbr, this.set);
