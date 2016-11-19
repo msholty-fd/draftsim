@@ -1,15 +1,14 @@
 (function() {
     //Configurable
-    var base = '//d2jytc150hf7hn.cloudfront.net/';
+    var base = 'https://d2jytc150hf7hn.cloudfront.net/';
     var scoutBucket = 'test';
 
     var styleguideVersion = getQueryVariable('styleguide');
     var scoutVersion = getQueryVariable('scout');
-    console.log(scoutVersion);
 
     if (scoutVersion === 'dev' || (!scoutVersion && location.hostname === "localhost")) {
         window.enableDebugInfo = true;
-        base = '';
+        base = 'https://localhost:9000';
     } else if (scoutVersion) {
         base += scoutVersion;
     } else {
@@ -104,8 +103,8 @@
 
     function loadResources() {
         if (cutsTheMustard()) {
-            addCssTag('/app.css');
-            addScriptTag('/app.js', onScriptsLoaded);
+            addCssTag(base + '/app.css');
+            addScriptTag(base + '/app.js', onScriptsLoaded);
 
         } else {
             addGlobalClass('browser--unsupported');
